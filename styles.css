@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Orbitron:wght@700;900&display=swap');
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    background-color: #0D0D0D;
+    color: #E0E0E0;
+    font-family: 'Fira Code', monospace;
+    min-height: 100vh;
+}
+
+
+.btn {
+    padding: 12px; 
+    background: transparent; 
+    border: 1px solid #39FF14;
+    color: #39FF14; 
+    font-family: 'Fira Code', monospace; 
+    font-weight: bold;
+    text-transform: uppercase; 
+    cursor: pointer; 
+    text-decoration: none;
+    text-align: center; 
+    margin-top: auto; 
+    display: inline-block; 
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover { 
+    background: #39FF14; 
+    color: #0D0D0D; 
+    box-shadow: 0 0 15px #39FF14; 
+}
+
+.sys-msg { 
+    padding: 10px; 
+    margin-bottom: 20px; 
+    font-size: 0.85rem; 
+    border-left: 3px solid; 
+}
+
+.sys-msg.error { 
+    border-color: #FF007F; 
+    color: #FF007F; 
+    background: rgba(255, 0, 127, 0.1); 
+}
+
+.sys-msg.success { 
+    border-color: #39FF14; 
+    color: #39FF14; 
+    background: rgba(57, 255, 20, 0.1); 
+}
+
+
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 40px; 
+    border-bottom: 1px solid #00E5FF;
+    background-color: rgba(13, 13, 13, 0.9);
+}
+
+.brand-header a { 
+    text-decoration: none; 
+    font-size: 1.5rem; 
+}
+
+.brand-text { 
+    font-family: 'Orbitron', sans-serif; 
+    font-weight: 900; 
+    color: #00E5FF; 
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.4); 
+}
+
+.slash { 
+    color: #FF007F; 
+}
+
+.search-bar { 
+    display: flex; 
+    gap: 10px; 
+}
+
+.search-bar input { 
+    width: 250px; 
+    padding: 8px; 
+    background: transparent; 
+    border: 1px solid #333; 
+    color: #E0E0E0; 
+    font-family: 'Fira Code', monospace;
+    transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #00E5FF;
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+}
+
+.nav-links a { 
+    color: #E0E0E0; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { 
+    color: #39FF14; 
+}
+
+
+.container { 
+    padding: 40px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.product-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; 
+    margin-top: 30px;
+}
+
+.product-card {
+    border: 1px solid #333; 
+    background-color: rgba(0, 229, 255, 0.02);
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover { 
+    border-color: #00E5FF; 
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.1); 
+}
+
+.product-img { 
+    width: 100%; 
+    height: 180px; 
+    object-fit: contain; 
+    margin-bottom: 15px; 
+}
+
+.code-block { 
+    margin-bottom: 15px; 
+    font-size: 0.85rem; 
+    line-height: 1.6; 
+    white-space: pre-wrap; 
+    word-break: break-word; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: 15px; 
+    border-radius: 4px; 
+    border-left: 2px solid #FF007F; 
+    flex-grow: 1; 
+}
+
+.keyword { color: #FF007F; } 
+.variable { color: #00E5FF; } 
+.string { color: #E0E0E0; }
+
+.auth-wrapper { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 80vh; 
+}
+
+.auth-container { 
+    border: 1px solid #00E5FF; 
+    padding: 40px; 
+    width: 400px; 
+    background: rgba(0, 229, 255, 0.02); 
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.05);
+}
+
+
+.form-group { 
+    margin-bottom: 20px; 
+}
+
+label { 
+    display: block; 
+    color: #00E5FF; 
+    margin-bottom: 8px; 
+    font-size: 0.9rem; 
+}
+
+input { 
+    width: 100%; 
+    padding: 12px; 
+    background: transparent; 
+    border: 1px solid #333; 
+    color: #E0E0E0; 
+    font-family: 'Fira Code', monospace; 
+    transition: border-color 0.3s; 
+}
+
+input:focus { 
+    outline: none; 
+    border-color: #FF007F; 
+    box-shadow: 0 0 8px rgba(255, 0, 127, 0.3); 
+}
+
+.toggle-form { 
+    text-align: center; 
+    margin-top: 20px; 
+    font-size: 0.85rem; 
+}
+
+.toggle-form a { 
+    color: #FF007F; 
+    text-decoration: none; 
+    transition: text-decoration 0.3s;
+}
+
+.toggle-form a:hover { 
+    text-decoration: underline; 
+}
+
+.cart-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+
+.cart-table th, 
+.cart-table td { 
+    padding: 15px; 
+    text-align: left; 
+    border-bottom: 1px dashed #333; 
+}
+
+.cart-table th { 
+    color: #00E5FF; 
+    font-family: 'Orbitron', sans-serif; 
+}
