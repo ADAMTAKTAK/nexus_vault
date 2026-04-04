@@ -20,11 +20,12 @@ $query = isset($_GET['query']) ? $_GET['query'] : "";
             <button type="submit" class="btn" style="border-color:#00E5FF; color:#00E5FF; padding:5px 10px;">[EXE]</button>
         </form>
         <div class="nav-links">
-            <a href="cart.php">>_ cart[0]</a>
+            <a href="cart.php">>_ cart</a>
             <?php if(isset($_SESSION['id'])): ?>
-                <a href="#" style="color:#00E5FF;">>_ <?php echo $_SESSION['user_name']; ?></a>
+                <a href="profile.php" style="color:#00E5FF;">>_ <?php echo $_SESSION['user_name']; ?></a>
+                <a href="controllers/logout_controller.php" style="color:#FF007F; font-size: 0.85rem;">[LOGOUT]</a>
             <?php else: ?>
-                <a href="login.php" style="color:#39FF14;">>_ login</a>
+                <a href="login.php" style="color:#39FF14;">>_ sys.login</a>
             <?php endif; ?>
         </div>
     </nav>
@@ -44,7 +45,7 @@ $query = isset($_GET['query']) ? $_GET['query'] : "";
   name:  <span class="string">"<?php echo $p->product_name; ?>"</span>;
   price: <span class="keyword"><?php echo $p->product_price; ?>_USD</span>;
 }</pre>
-                    <a href="#" class="btn">>_ VIEW_SPECS</a>
+                    <a href="product_details.php?id=<?php echo $p->id; ?>" class="btn">>_ VIEW_SPECS</a>
                 </div>
             <?php endwhile; ?>
         </div>

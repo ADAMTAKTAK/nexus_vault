@@ -1,15 +1,11 @@
 <?php
     session_start();
-    if(isset($_SESSION["id"])){
-        header("location: index.php");
-        exit();
-    }
+    if(isset($_SESSION["id"])){ header("location: index.php"); exit(); }
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN // NEXUS VAULT</title>
     <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
 </head>
@@ -21,6 +17,11 @@
                 <div style="font-size: 0.8rem; margin-top: 10px; color: #777;">USER_AUTH_SYS</div>
             </div>
 
+            <?php
+                include "model/conn.php";
+                include "controllers/login_controller.php";
+            ?>
+
             <form method="POST" action="">
                 <div class="form-group">
                     <label>>_ sys.email:</label>
@@ -30,7 +31,7 @@
                     <label>>_ sys.password:</label>
                     <input type="password" name="password" required placeholder="********">
                 </div>
-                <button type="button" class="btn">>_ execute login</button>
+                <button type="submit" name="btn_login" value="1" class="btn">>_ execute login</button>
             </form>
             
             <div class="toggle-form">
