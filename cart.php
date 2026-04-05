@@ -32,14 +32,18 @@ if (isset($_GET['remove'])) {
         <div class="nav-links">
             <a href="index.php" style="color:#00E5FF;">>_ return_catalog</a>
             <a href="profile.php">>_ <?php echo $_SESSION['user_name']; ?></a>
+            <?php if($_SESSION['user_role'] === 'admin'): ?>
+                    <a href="admin/admin_dashboard.php" style="color:#FF007F; font-weight:bold;">[ADMIN_SYS]</a>
+            <?php endif; ?>
+            <a href="controllers/logout_controller.php" style="color:#FF007F; font-size: 0.85rem;">[LOGOUT]</a>
         </div>
     </nav>
 
     <div class="container">
         <h2 style="color:#00E5FF; font-family:'Orbitron', sans-serif; margin-bottom: 20px;">>_ SYSTEM_CART</h2>
         
-        <div style="border: 1px solid #333; background: rgba(0, 229, 255, 0.02); padding: 20px;">
-            <table class="cart-table">
+        <div style="border: 1px solid #333; background: rgba(0, 0, 0, 0.4); padding: 20px; width: 100%; max-width: 900px; box-sizing: border-box; margin: 0 auto; overflow-x: auto;">
+            <table class="cart-table" style="width: 100%; min-width: 600px;">
                 <thead>
                     <tr>
                         <th>ITEM</th>

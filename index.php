@@ -7,6 +7,7 @@ $query = isset($_GET['query']) ? $_GET['query'] : "";
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDEX // NEXUS VAULT</title>
     <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
 </head>
@@ -15,14 +16,21 @@ $query = isset($_GET['query']) ? $_GET['query'] : "";
         <div class="brand-header">
             <a href="index.php">>_ [ <span class="brand-text">NEXUS</span> <span class="slash">//</span> <span class="brand-text">VAULT</span> ]</a>
         </div>
-        <form class="search-bar" method="GET">
-            <input type="text" name="query" placeholder=">_ query_catalog..." value="<?php echo $query; ?>">
-            <button type="submit" class="btn" style="border-color:#00E5FF; color:#00E5FF; padding:5px 10px;">[EXE]</button>
+        
+        <form class="search-form" method="GET">
+            <input type="text" name="query" class="search-input" placeholder=">_ query_catalog..." value="<?php echo htmlspecialchars($query); ?>">
+            <button type="submit" class="search-btn">[EXE]</button>
         </form>
+
         <div class="nav-links">
             <a href="cart.php">>_ cart</a>
             <?php if(isset($_SESSION['id'])): ?>
                 <a href="profile.php" style="color:#00E5FF;">>_ <?php echo $_SESSION['user_name']; ?></a>
+                
+                <?php if($_SESSION['user_role'] === 'admin'): ?>
+                    <a href="admin/admin_dashboard.php" style="color:#FF007F; font-weight:bold;">[ADMIN_SYS]</a>
+                <?php endif; ?>
+                
                 <a href="controllers/logout_controller.php" style="color:#FF007F; font-size: 0.85rem;">[LOGOUT]</a>
             <?php else: ?>
                 <a href="login.php" style="color:#39FF14;">>_ sys.login</a>

@@ -10,12 +10,13 @@ $u = $res->fetch_object();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDIT_PROFILE // NEXUS VAULT</title>
     <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <div class="auth-wrapper">
-        <div class="auth-container">
+        <div class="auth-container" style="width: 100%; max-width: 400px; box-sizing: border-box; margin: 0 auto;">
             <h2 style="color:#00E5FF; font-family:'Orbitron'; text-align:center; margin-bottom:20px;">>_ UPDATE_DATA</h2>
             
             <?php include "controllers/edit_profile_controller.php"; ?>

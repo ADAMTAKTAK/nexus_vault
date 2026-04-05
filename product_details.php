@@ -28,6 +28,7 @@ $product = $result->fetch_object();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>SPECS // <?php echo htmlspecialchars($product->product_name); ?></title>
     <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
 </head>
@@ -40,6 +41,9 @@ $product = $result->fetch_object();
             <a href="cart.php">>_ cart</a>
             <?php if(isset($_SESSION['id'])): ?>
                 <a href="profile.php" style="color:#00E5FF;">>_ <?php echo $_SESSION['user_name']; ?></a>
+                <?php if($_SESSION['user_role'] === 'admin'): ?>
+                    <a href="admin/admin_dashboard.php" style="color:#FF007F; font-weight:bold;">[ADMIN_SYS]</a>
+                <?php endif; ?>
                 <a href="controllers/logout_controller.php" style="color:#FF007F; font-size: 0.85rem;">[LOGOUT]</a>
             <?php else: ?>
                 <a href="login.php" style="color:#39FF14;">>_ sys.login</a>
@@ -73,7 +77,7 @@ $product = $result->fetch_object();
   description: <span class="string">"<?php echo htmlspecialchars($product->product_description); ?>"</span>;
 }</pre>
 
-               <form action="controllers/add_to_cart_controller.php" method="POST" style="display: flex; gap: 15px; align-items: center;">
+               <form action="controllers/add_to_cart_controller.php" method="POST" style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
                     <input type="hidden" name="product_id" value="<?php echo $product->id; ?>">
                     
                     <div style="display: flex; flex-direction: column;">

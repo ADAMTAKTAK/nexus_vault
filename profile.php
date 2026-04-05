@@ -28,13 +28,17 @@
         </div>
         <div class="nav-links">
             <a href="index.php" style="color:#00E5FF;">>_ return_catalog</a>
+           <?php if($_SESSION['user_role'] === 'admin'): ?>
+                    <a href="admin/admin_dashboard.php" style="color:#FF007F; font-weight:bold;">[ADMIN_SYS]</a>
+            <?php endif; ?>
             <a href="controllers/logout_controller.php" style="color:#FF007F; font-size: 0.85rem;">[LOGOUT]</a>
         </div>
     </nav>
 
     <div class="container" style="display: flex; justify-content: center; align-items: center; min-height: 70vh;">
         
-        <div class="auth-container" style="width: 500px;">
+        <div class="auth-wrapper" style="padding: 20px;">
+        <div class="auth-container" style="border-color: #00E5FF; width: 100%; max-width: 500px; box-sizing: border-box; margin: 0 auto;">
             <h2 style="color:#00E5FF; font-family:'Orbitron', sans-serif; margin-bottom: 20px; text-align: center;">>_ USER_PROFILE</h2>
             
             <div style="border: 1px solid #333; background: rgba(0, 0, 0, 0.4); padding: 20px; margin-bottom: 20px;">

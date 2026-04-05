@@ -248,3 +248,55 @@ input:focus {
     color: #00E5FF; 
     font-family: 'Orbitron', sans-serif; 
 }
+
+
+.search-form {
+    display: flex;
+    height: 38px;
+    align-items: stretch; 
+    max-width: 500px;
+}
+.search-input {
+    flex-grow: 1;
+    background: transparent;
+    border: 1px solid #333;
+    color: #00E5FF;
+    padding: 0 15px;
+    font-family: 'Fira Code', monospace;
+    outline: none;
+}
+.search-btn {
+    border: 1px solid #00E5FF;
+    background: transparent;
+    color: #00E5FF;
+    padding: 0 20px;
+    font-family: 'Fira Code', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.search-btn:hover {
+    background: rgba(0, 229, 255, 0.1);
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .search-form {
+        width: 100%;
+    }
+}

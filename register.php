@@ -6,12 +6,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTER // NEXUS VAULT</title>
     <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <div class="auth-wrapper">
-        <div class="auth-container">
+        <div class="auth-container" style="width: 100%; max-width: 400px; box-sizing: border-box; margin: 0 auto;">
             <div class="brand-header">
                 <div>>_ [ <span class="brand-text">NEXUS</span> <span class="slash">//</span> <span class="brand-text">VAULT</span> ]</div>
                 <div style="font-size: 0.8rem; margin-top: 10px; color: #777;">NEW_USER_SYS</div>
@@ -23,7 +24,7 @@
             ?>
 
             <form method="POST" action="">
-                <div style="display: flex; gap: 10px;">
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                     <div class="form-group" style="flex: 1;">
                         <label>>_ first_name:</label>
                         <input type="text" name="firstName" required>
