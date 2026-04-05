@@ -12,7 +12,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'add_user') {
     $fn = trim($_POST['firstName']);
     $ln = trim($_POST['lastName']);
     $em = trim($_POST['email']);
-    $pw = $_POST['password']; 
+    $pw = password_hash($_POST['password'], PASSWORD_DEFAULT); 
     $role = $_POST['role'];
 
     try {

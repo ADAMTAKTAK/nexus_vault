@@ -42,8 +42,8 @@ include "../model/conn.php";
                     <input type="number" step="0.01" name="product_price" required style="border-color: #333;">
                 </div>
                 <div style="flex: 2; min-width: 200px;">
-                    <label style="color: #39FF14; font-size: 0.8rem; margin-bottom: 5px;">>_ ruta_imagen (ej: assets/rtx.png):</label>
-                    <input type="text" name="product_image" value="assets/placeholder.png" required style="border-color: #333;">
+                    <label style="color: #39FF14; font-size: 0.8rem; margin-bottom: 5px;">>_ ruta_imagen (ej: assets/products/rtx.png):</label>
+                    <input type="text" name="product_image" value="assets/products/placeholder.png" required style="border-color: #333;">
                 </div>
                 <div style="flex: 3; min-width: 100%; margin-top: 10px;">
                     <label style="color: #39FF14; font-size: 0.8rem; margin-bottom: 5px;">>_ descripcion_tecnica:</label>

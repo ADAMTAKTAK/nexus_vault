@@ -17,8 +17,15 @@ $query = isset($_GET['query']) ? $_GET['query'] : "";
             <a href="index.php">>_ [ <span class="brand-text">NEXUS</span> <span class="slash">//</span> <span class="brand-text">VAULT</span> ]</a>
         </div>
         
-        <form class="search-form" method="GET">
-            <input type="text" name="query" class="search-input" placeholder=">_ query_catalog..." value="<?php echo htmlspecialchars($query); ?>">
+        <form class="search-form" method="GET" style="max-width: 650px;">
+            <input type="text" name="query" class="search-input" placeholder=">_ query_catalog..." value="<?php echo htmlspecialchars($query); ?>" style="border-right: none;">
+            
+            <select name="filter" style="background: transparent; border: 1px solid #333; border-right: none; color: #00E5FF; font-family: 'Fira Code', monospace; padding: 0 10px; outline: none; cursor: pointer; height: 100%; box-sizing: border-box;">
+                <option value="" style="background: #0D0D0D;">[FILTRO_PRECIO]</option>
+                <option value="asc" <?php if(isset($_GET['filter']) && $_GET['filter'] == 'asc') echo 'selected'; ?> style="background: #0D0D0D;">>_ ASCENDENTE</option>
+                <option value="desc" <?php if(isset($_GET['filter']) && $_GET['filter'] == 'desc') echo 'selected'; ?> style="background: #0D0D0D;">>_ DESCENDENTE</option>
+            </select>
+
             <button type="submit" class="search-btn">[EXE]</button>
         </form>
 
@@ -43,7 +50,17 @@ $query = isset($_GET['query']) ? $_GET['query'] : "";
         <div class="product-grid">
             <?php
             $sql = "SELECT * FROM products";
-            if(!empty($query)) $sql .= " WHERE product_name LIKE '%$query%'";
+            if(!empty($query)) {
+                $sql .= " WHERE product_name LIKE '%$query%'";
+            }
+            
+            $filter = isset($_GET['filter']) ? $_GET['filter'] : "";
+            if ($filter === 'asc') {
+                $sql .= " ORDER BY product_price ASC";
+            } elseif ($filter === 'desc') {
+                $sql .= " ORDER BY product_price DESC";
+            }
+
             $res = $conn->query($sql);
             while($p = $res->fetch_object()): ?>
                 <div class="product-card">

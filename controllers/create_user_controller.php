@@ -5,7 +5,7 @@
             $firstName = trim($_POST['firstName']);
             $lastName = trim($_POST['lastName']);
             $email = trim($_POST['newEmail']);
-            $pass = $_POST['newPassword'];
+            $pass = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
             
             try {
                 $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)");

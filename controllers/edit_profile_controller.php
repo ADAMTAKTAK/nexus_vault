@@ -13,8 +13,9 @@ if (!empty($_POST["btn_update"])) {
 
     if (!empty($p1)) {
         if ($p1 === $p2) {
+            $hash_pass = password_hash($p1, PASSWORD_DEFAULT);
             $upd_p = $conn->prepare("UPDATE users SET password = ? WHERE id = ?");
-            $upd_p->bind_param("si", $p1, $uid);
+            $upd_p->bind_param("si", $hash_pass, $uid);
             $upd_p->execute();
             echo "<div class='sys-msg success'>[SYS] Perfil y password actualizados.</div>";
         } else {

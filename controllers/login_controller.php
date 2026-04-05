@@ -12,7 +12,7 @@
             $result = $stmt->get_result();
             $usuario = $result->fetch_object();
 
-            if($usuario && $pass === $usuario->password){
+            if($usuario && password_verify($pass, $usuario->password)){
                 
                 $_SESSION["id"] = $usuario->id;
                 $_SESSION["user_name"] = $usuario->first_name;
